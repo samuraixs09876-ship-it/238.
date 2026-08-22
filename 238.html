@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Một lời chúc dành riêng cho bạn 🌸</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   1. RESET & BIẾN MÀU
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink-light: #fff4f6;
+    --pink: #f8d7df;
+    --pink-dark: #d8899b;
+    --rose: #b9677b;
+    --gold: #c9a46c;
+    --text: #624650;
+    --white: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: "Montserrat", sans-serif;
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(255,255,255,.95),
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            #ffe8ed 0%,
+            #fff5f7 48%,
+            #fce3e9 100%
+        );
+}
+
+
+/* =========================================================
+   2. MÀN HÌNH MỞ ĐẦU
+========================================================= */
+
+#intro {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.95),
+            rgba(255,225,232,.98)
+        );
+
+    transition:
+        opacity 1.2s ease,
+        visibility 1.2s ease;
+}
+
+#intro.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.intro-box {
+    width: min(90%, 520px);
+    padding: 55px 35px;
+
+    text-align: center;
+
+    border: 1px solid rgba(185,103,123,.15);
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.52);
+
+    box-shadow:
+        0 25px 80px rgba(155,83,103,.13);
+
+    backdrop-filter: blur(20px);
+
+    animation: introFloat 4s ease-in-out infinite;
+}
+
+.intro-flower {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.intro-box h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(42px, 8vw, 68px);
+    font-weight: 600;
+    color: #9c5268;
+    margin-bottom: 12px;
+}
+
+.intro-box p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #916b76;
+    margin-bottom: 30px;
+}
+
+.open-btn {
+    border: none;
+    outline: none;
+
+    padding: 15px 28px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c77a8d,
+            #a95d72
+        );
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    letter-spacing: .4px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 30px rgba(169,93,114,.25);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.open-btn:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 17px 35px rgba(169,93,114,.35);
+}
+
+@keyframes introFloat {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* =========================================================
+   3. TRANG CHÍNH
+========================================================= */
+
+#main {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding:
+        60px 20px
+        100px;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 1.4s ease,
+        transform 1.4s ease;
+}
+
+#main.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   4. TIÊU ĐỀ
+========================================================= */
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.small-title {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 8px;
+}
+
+.title h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(48px, 8vw, 82px);
+    line-height: .95;
+    font-weight: 600;
+    color: #9e5368;
+}
+
+.title p {
+    margin-top: 15px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 21px;
+    color: #a97884;
+}
+
+
+/* =========================================================
+   5. CỤM 8 BÔNG HOA TRÒN CHỤM LẠI
+========================================================= */
+
+.bouquet {
+    position: relative;
+
+    width: min(92vw, 440px);
+    height: 380px;
+
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+
+    transform:
+        translateY(50px)
+        scale(.9);
+
+    transition:
+        opacity 1.4s ease .5s,
+        transform 1.5s cubic-bezier(.2,.8,.2,1) .5s;
+}
+
+#main.active .bouquet {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Ánh sáng phía sau cụm hoa */
+.bouquet-glow {
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,211,220,.85),
+            rgba(255,255,255,0) 70%
+        );
+
+    filter: blur(10px);
+}
+
+
+/* =========================================================
+   6. HOA NGHỆ THUẬT (8 BÔNG CHỤM LẠI)
+========================================================= */
+
+.flower {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    opacity: 0;
+    transform: scale(.2);
+    z-index: 2;
+}
+
+#main.active .flower {
+    animation:
+        flowerAppear 1.1s cubic-bezier(.2,.8,.2,1) forwards,
+        flowerFloat 5s ease-in-out infinite 2.2s;
+}
+
+/* Sắp xếp 8 bông hoa tạo thành một khối chụm tròn hài hòa */
+.flower.f1 { top: 20px;  left: calc(50% - 45px); animation-delay: .8s, 2.4s !important; }
+.flower.f2 { top: 60px;  left: calc(50% - 115px); animation-delay: .9s, 2.5s !important; }
+.flower.f3 { top: 60px;  left: calc(50% + 25px);  animation-delay: 1.0s, 2.6s !important; }
+.flower.f4 { top: 130px; left: calc(50% - 145px); animation-delay: 1.1s, 2.7s !important; }
+.flower.f5 { top: 130px; left: calc(50% + 55px);  animation-delay: 1.2s, 2.8s !important; }
+.flower.f6 { top: 140px; left: calc(50% - 45px); animation-delay: 1.3s, 2.9s !important; }
+.flower.f7 { top: 200px; left: calc(50% - 100px); animation-delay: 1.4s, 3.0s !important; }
+.flower.f8 { top: 200px; left: calc(50% + 10px);  animation-delay: 1.5s, 3.1s !important; }
+
+@keyframes flowerAppear {
+    from {
+        opacity: 0;
+        transform: scale(.2) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes flowerFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+/* Cánh hoa xếp lớp mềm mại */
+.petals {
+    position: absolute;
+    inset: 0;
+    animation: rotateSlow 20s linear infinite;
+}
+
+.petal {
+    position: absolute;
+    width: 34px;
+    height: 48px;
+    left: 28px;
+    top: 9px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    background: linear-gradient(135deg, #ffb5c5, #e07a94);
+    box-shadow: 0 4px 15px rgba(191,98,122,0.18);
+    transform-origin: center 36px;
+}
+
+.petal:nth-child(1) { transform: rotate(0deg); }
+.petal:nth-child(2) { transform: rotate(72deg); }
+.petal:nth-child(3) { transform: rotate(144deg); }
+.petal:nth-child(4) { transform: rotate(216deg); }
+.petal:nth-child(5) { transform: rotate(288deg); }
+
+@keyframes rotateSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Tâm hoa */
+.flower-center {
+    position: absolute;
+    z-index: 5;
+    left: 36px;
+    top: 36px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #fff4bf, #dfad5d);
+    box-shadow: 0 0 12px rgba(224,173,93,0.8);
+}
+
+
+/* =========================================================
+   7. PHONG BÌ
+========================================================= */
+
+.envelope-area {
+    position: relative;
+
+    margin-top: 15px;
+
+    display: flex;
+    justify-content: center;
+
+    opacity: 0;
+
+    transform:
+        translateY(40px)
+        scale(.9);
+
+    transition:
+        opacity 1.2s ease 3s,
+        transform 1.2s ease 3s;
+}
+
+#main.active .envelope-area {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.envelope-label {
+    position: absolute;
+
+    top: -30px;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 20px;
+
+    color: #9b6472;
+}
+
+.envelope {
+    position: relative;
+
+    width: 300px;
+    height: 190px;
+
+    cursor: pointer;
+
+    perspective: 900px;
+
+    filter:
+        drop-shadow(
+            0 18px 25px
+            rgba(135,76,92,.13)
+        );
+}
+
+.envelope-body {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffaf8,
+            #f9e6e8
+        );
+
+    border:
+        1px solid rgba(166,99,117,.18);
+}
+
+.envelope-body::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left:
+        150px solid transparent;
+
+    border-right:
+        150px solid transparent;
+
+    border-bottom:
+        105px solid rgba(223,169,181,.35);
+}
+
+.envelope-body::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left:
+        150px solid transparent;
+
+    border-right:
+        150px solid transparent;
+
+    border-bottom:
+        105px solid rgba(255,255,255,.7);
+}
+
+
+/* Nắp */
+
+.envelope-flap {
+    position: absolute;
+
+    z-index: 5;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 110px;
+
+    transform-origin: top center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8e2e6,
+            #fff8f7
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    transition:
+        transform 1s cubic-bezier(.2,.8,.2,1);
+}
+
+.envelope.open .envelope-flap {
+    transform:
+        rotateX(180deg);
+}
+
+
+/* Tem thư */
+
+.seal {
+    position: absolute;
+
+    z-index: 10;
+
+    left: 50%;
+    top: 72px;
+
+    transform: translateX(-50%);
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    font-size: 18px;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #d98da0,
+            #a95d73
+        );
+
+    box-shadow:
+        0 5px 15px rgba(153,80,101,.25);
+
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+}
+
+.envelope.open .seal {
+    opacity: 0;
+
+    transform:
+        translateX(-50%)
+        scale(.5);
+}
+
+
+/* =========================================================
+   8. LÁ THƯ (ĐÃ ĐƯỢC ĐẶT LỆCH SANG MỘT BÊN ĐỂ DỄ NHÌN)
+========================================================= */
+
+.letter-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    /* Căn chỉnh sang phía dưới / lệch một bên trên màn hình điện thoại và máy tính */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    padding: 15px 15px 25px;
+
+    background:
+        rgba(101,57,70,.12);
+
+    backdrop-filter: blur(6px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity .5s ease,
+        visibility .5s ease;
+}
+
+.letter-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.letter {
+    position: relative;
+
+    width: min(95vw, 560px);
+
+    max-height: 70vh;
+
+    overflow-y: auto;
+
+    padding: 40px 35px 35px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffdfa,
+            #fff6f4
+        );
+
+    border:
+        1px solid rgba(183,121,135,.25);
+
+    box-shadow:
+        0 20px 60px rgba(92,50,63,.2);
+
+    transform:
+        translateY(40px)
+        scale(.9);
+
+    transition:
+        transform .6s cubic-bezier(.2,.8,.2,1);
+}
+
+.letter-modal.show .letter {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.letter-decoration {
+    position: absolute;
+
+    top: 15px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #c68b99;
+
+    letter-spacing: 8px;
+}
+
+.letter h2 {
+    text-align: center;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 36px;
+
+    font-weight: 600;
+
+    color: #9c5368;
+
+    margin-bottom: 22px;
+}
+
+.letter-content {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+
+    color: #674953;
+
+    text-align: justify;
+}
+
+.letter-content p {
+    margin-bottom: 16px;
+}
+
+.letter-content .greeting {
+    text-align: left;
+    font-weight: 600;
+    color: #a05b70;
+}
+
+/* Hiệu ứng con trỏ nhấp nháy khi gõ chữ */
+.typing-cursor::after {
+    content: "|";
+    display: inline-block;
+    color: #a05b70;
+    animation: blinkCursor 0.8s infinite;
+    font-weight: normal;
+    margin-left: 2px;
+}
+
+@keyframes blinkCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.close-letter {
+    position: absolute;
+
+    right: 15px;
+    top: 15px;
+
+    width: 34px;
+    height: 34px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(199,126,143,.1);
+
+    color: #a25c70;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   9. HẠT HOA BAY
+========================================================= */
+
+.particle {
+    position: fixed;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: rgba(199,126,143,.4);
+
+    animation:
+        particleFloat linear forwards;
+}
+
+@keyframes particleFloat {
+
+    from {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .8;
+    }
+
+    to {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   10. RESPONSIVE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #main {
+        padding:
+            45px 15px
+            80px;
+    }
+
+    .bouquet {
+        height: 320px;
+    }
+
+    .flower {
+        transform: scale(.72);
+    }
+
+    .flower.f1 { top: 15px; left: calc(50% - 35px); }
+    .flower.f2 { top: 50px; left: calc(50% - 95px); }
+    .flower.f3 { top: 50px; left: calc(50% + 15px); }
+    .flower.f4 { top: 110px; left: calc(50% - 115px); }
+    .flower.f5 { top: 110px; left: calc(50% + 45px); }
+    .flower.f6 { top: 120px; left: calc(50% - 35px); }
+    .flower.f7 { top: 170px; left: calc(50% - 80px); }
+    .flower.f8 { top: 170px; left: calc(50% + 0px); }
+
+    .envelope {
+        width: 280px;
+        height: 175px;
+    }
+
+    .letter-modal {
+        /* Trên điện thoại, căn thư sát cạnh dưới để chừa không gian phía trên ngắm web */
+        align-items: flex-end;
+        padding: 10px;
+    }
+
+    .letter {
+        padding: 35px 22px 25px;
+        max-height: 65vh;
+    }
+
+    .letter h2 {
+        font-size: 32px;
+    }
+
+    .letter-content {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .intro-box {
+        padding:
+            45px 25px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     MÀN HÌNH MỞ ĐẦU
+===================================================== -->
+
+<section id="intro">
+
+    <div class="intro-box">
+
+        <div class="intro-flower">
+            🌸
+        </div>
+
+        <h1>Một chút yêu thương</h1>
+
+        <p>
+            Có một điều nhỏ xinh mình muốn gửi đến bạn.
+            <br>
+            Hãy chạm vào nút bên dưới nhé.
+        </p>
+
+        <button
+            class="open-btn"
+            id="openPage"
+        >
+            Chạm để mở lời chúc 🌸
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NỘI DUNG CHÍNH
+===================================================== -->
+
+<main id="main">
+
+    <header class="title">
+
+        <div class="small-title">
+            A little celebration
+        </div>
+
+        <h1>Happy Birthday</h1>
+
+        <p>
+            Gửi đến một người thật đặc biệt ✨
+        </p>
+
+    </header>
+
+
+    <!-- =================================================
+         CỤM 8 BÔNG HOA TRÒN CHỤM LẠI
+    ================================================== -->
+
+    <section class="bouquet">
+
+        <div class="bouquet-glow"></div>
+
+        <!-- Hoa 1 -->
+        <div class="flower f1">
+            <div class="petals">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+            </div>
+            <div class="flower-center"></div>
+        </div>
+
+        <!-- Hoa 2 -->
+        <div class="flower f2">
+            <div class="petals">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+            </div>
+            <div class="flower-center"></div>
+        </div>
+
+        <!-- Hoa 3 -->
+        <div class="flower f3">
+            <div class="petals">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+            </div>
+            <div class="flower-center"></div>
+        </div>
+
+        <!-- Hoa 4 -->
+        <div class="flower f4">
+            <div class="petals">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+            </div>
+            <div class="flower-center"></div>
+        </div>
+
+        <!-- Hoa 5 -->
+        <div class="flower f5">
+            <div class="petals">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+            </div>
+            <div class="flower-center"></div>
+        </div>
+
+        <!-- Hoa 6 -->
+        <div class="flower f6">
+            <div class="petals">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+            </div>
+            <div class="flower-center"></div>
+        </div>
+
+        <!-- Hoa 7 -->
+        <div class="flower f7">
+            <div class="petals">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+            </div>
+            <div class="flower-center"></div>
+        </div>
+
+        <!-- Hoa 8 -->
+        <div class="flower f8">
+            <div class="petals">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+            </div>
+            <div class="flower-center"></div>
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         PHONG BÌ
+    ================================================== -->
+
+    <section class="envelope-area">
+
+        <div class="envelope-label">
+            Có một lá thư dành cho bạn...
+        </div>
+
+        <div
+            class="envelope"
+            id="envelope"
+        >
+
+            <div class="envelope-body"></div>
+
+            <div class="envelope-flap"></div>
+
+            <div class="seal">
+                ♡
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     MODAL LÁ THƯ
+===================================================== -->
+
+<div
+    class="letter-modal"
+    id="letterModal"
+>
+
+    <article class="letter">
+
+        <button
+            class="close-letter"
+            id="closeLetter"
+            aria-label="Đóng thư"
+        >
+            ×
+        </button>
+
+        <div class="letter-decoration">
+            ✦ · ✦
+        </div>
+
+
+        <h2>
+            Gửi bạn
+        </h2>
+
+
+        <div class="letter-content" id="letterContent">
+            <!-- Nội dung thư sẽ được tự động gõ ra bằng JavaScript ở dưới -->
+        </div>
+
+    </article>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   1. BIẾN
+========================================================= */
+
+const intro =
+    document.getElementById("intro");
+
+const main =
+    document.getElementById("main");
+
+const openPage =
+    document.getElementById("openPage");
+
+const envelope =
+    document.getElementById("envelope");
+
+const letterModal =
+    document.getElementById("letterModal");
+
+const closeLetter =
+    document.getElementById("closeLetter");
+
+const letterContentContainer =
+    document.getElementById("letterContent");
+
+
+let unlocked = false;
+let typingStarted = false;
+
+
+/* Danh sách các đoạn văn bản trong thư */
+const letterData = [
+    {
+        className: "greeting",
+        text: "Chúc mừng sinh nhật m nha! 🌷"
+    },
+    {
+        className: "",
+        text: "Tuổi mới học giỏi, bớt suy, có được nhiều điều may mắn và thành công trong cuộc sống nha."
+    },
+    {
+        className: "",
+        text: "Hôm nay nhớ vui thật nhiều nha! ✨🎂"
+    }
+];
+
+
+/* =========================================================
+   2. BAN ĐẦU: TẤT CẢ HIỆU ỨNG ĐỀU CHƯA CHẠY
+========================================================= */
+
+document.body.classList.add("locked");
+
+
+/* =========================================================
+   3. NHẤN "MỞ TRANG"
+========================================================= */
+
+openPage.addEventListener("click", () => {
+
+    if (unlocked)
+        return;
+
+    unlocked = true;
+
+
+    /*
+        Cho trang chính bắt đầu animation
+    */
+
+    main.classList.add("active");
+
+
+    /*
+        Fade overlay
+    */
+
+    intro.classList.add("hide");
+
+
+    /*
+        Bắt đầu tạo hạt bay
+    */
+
+    startParticles();
+
+});
+
+
+/* =========================================================
+   4. MỞ PHONG BÌ & HIỆU ỨNG GÕ TỪNG CHỮ
+========================================================= */
+
+envelope.addEventListener("click", () => {
+
+    envelope.classList.add("open");
+
+
+    /*
+        Chờ nắp thư mở một chút
+        rồi hiện lá thư và chạy hiệu ứng gõ chữ
+    */
+
+    setTimeout(() => {
+
+        letterModal.classList.add("show");
+
+        if (!typingStarted) {
+            typingStarted = true;
+            startTypingEffect();
+        }
+
+    }, 600);
+
+});
+
+
+/* Hàm thực hiện gõ chữ lần lượt từng đoạn và từng ký tự */
+async function startTypingEffect() {
+    letterContentContainer.innerHTML = ""; // Xóa nội dung cũ nếu có
+
+    for (let i = 0; i < letterData.length; i++) {
+        const item = letterData[i];
+        const p = document.createElement("p");
+        if (item.className) {
+            p.className = item.className;
+        }
+        p.classList.add("typing-cursor"); // Thêm con trỏ nhấp nháy ở đoạn đang gõ
+        letterContentContainer.appendChild(p);
+
+        let htmlText = item.text;
+        let charIndex = 0;
+        
+        while (charIndex < htmlText.length) {
+            charIndex++;
+            p.innerHTML = htmlText.substring(0, charIndex);
+            
+            await new Promise(resolve => setTimeout(resolve, 25));
+        }
+
+        p.classList.remove("typing-cursor");
+
+        await new Promise(resolve => setTimeout(resolve, 400));
+    }
+}
+
+
+/* =========================================================
+   5. ĐÓNG LÁ THƯ
+========================================================= */
+
+closeLetter.addEventListener("click", () => {
+
+    letterModal.classList.remove("show");
+
+});
+
+
+/*
+    Click ra ngoài lá thư cũng đóng
+*/
+
+letterModal.addEventListener("click", (event) => {
+
+    if (
+        event.target === letterModal
+    ) {
+
+        letterModal.classList.remove("show");
+
+    }
+
+});
+
+
+/* =========================================================
+   6. ESC ĐỂ ĐÓNG THƯ
+========================================================= */
+
+document.addEventListener("keydown", (event) => {
+
+    if (
+        event.key === "Escape"
+    ) {
+
+        letterModal.classList.remove("show");
+
+    }
+
+});
+
+
+/* =========================================================
+   7. HẠT HOA BAY
+========================================================= */
+
+function startParticles() {
+
+    setInterval(() => {
+
+        if (!unlocked)
+            return;
+
+
+        createParticle();
+
+    }, 650);
+
+}
+
+
+function createParticle() {
+
+    const particle =
+        document.createElement("div");
+
+
+    particle.className =
+        "particle";
+
+
+    particle.style.left =
+        Math.random() * 100 + "vw";
+
+
+    particle.style.bottom =
+        "-10px";
+
+
+    const size =
+        Math.random() * 5 + 2;
+
+
+    particle.style.width =
+        size + "px";
+
+    particle.style.height =
+        size + "px";
+
+
+    const duration =
+        Math.random() * 7 + 6;
+
+
+    particle.style.animationDuration =
+        duration + "s";
+
+
+    particle.style.opacity =
+        Math.random() * .5 + .3;
+
+
+    document.body.appendChild(
+        particle
+    );
+
+
+    setTimeout(() => {
+
+        particle.remove();
+
+    }, duration * 1000 + 500);
+
+}
+
+</script>
+
+</body>
+</html>
