@@ -185,9 +185,8 @@ body {
     flex-direction: column;
     align-items: center;
 
-    padding:
-        60px 20px
-        100px;
+    /* Thêm padding an toàn hai bên trái phải để không bao giờ bị tràn màn hình */
+    padding: 50px 16px 80px;
 
     opacity: 0;
 
@@ -210,7 +209,9 @@ body {
 
 .title {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 360px; /* Giới hạn độ rộng để chữ ôm gọn, không bị bè ra mép điện thoại */
 }
 
 .small-title {
@@ -218,22 +219,23 @@ body {
     letter-spacing: 4px;
     text-transform: uppercase;
     color: var(--rose);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .title h1 {
     font-family: "Cormorant Garamond", serif;
-    font-size: clamp(48px, 8vw, 82px);
+    font-size: clamp(42px, 7.5vw, 68px);
     line-height: .95;
     font-weight: 600;
     color: #9e5368;
 }
 
 .title p {
-    margin-top: 15px;
+    margin-top: 12px;
     font-family: "Cormorant Garamond", serif;
-    font-size: 21px;
+    font-size: 19px;
     color: #a97884;
+    line-height: 1.4;
 }
 
 
@@ -244,10 +246,10 @@ body {
 .bouquet {
     position: relative;
 
-    width: min(92vw, 440px);
-    height: 380px;
+    width: min(90vw, 380px);
+    height: 320px;
 
-    margin-top: 10px;
+    margin-top: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -271,8 +273,8 @@ body {
 .bouquet-glow {
     position: absolute;
 
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
 
     left: 50%;
     top: 50%;
@@ -293,13 +295,13 @@ body {
 
 
 /* =========================================================
-   6. HOA NGHỆ THUẬT (8 BÔNG CHỤM LẠI)
+   6. HOA NGHỆ THUẬT (8 BÔNG CHỤM LẠI - THU NHỎ VỪA KHÍT)
 ========================================================= */
 
 .flower {
     position: absolute;
-    width: 90px;
-    height: 90px;
+    width: 78px;
+    height: 78px;
     opacity: 0;
     transform: scale(.2);
     z-index: 2;
@@ -311,14 +313,15 @@ body {
         flowerFloat 5s ease-in-out infinite 2.2s;
 }
 
-.flower.f1 { top: 20px;  left: calc(50% - 45px); animation-delay: .8s, 2.4s !important; }
-.flower.f2 { top: 60px;  left: calc(50% - 115px); animation-delay: .9s, 2.5s !important; }
-.flower.f3 { top: 60px;  left: calc(50% + 25px);  animation-delay: 1.0s, 2.6s !important; }
-.flower.f4 { top: 130px; left: calc(50% - 145px); animation-delay: 1.1s, 2.7s !important; }
-.flower.f5 { top: 130px; left: calc(50% + 55px);  animation-delay: 1.2s, 2.8s !important; }
-.flower.f6 { top: 140px; left: calc(50% - 45px); animation-delay: 1.3s, 2.9s !important; }
-.flower.f7 { top: 200px; left: calc(50% - 100px); animation-delay: 1.4s, 3.0s !important; }
-.flower.f8 { top: 200px; left: calc(50% + 10px);  animation-delay: 1.5s, 3.1s !important; }
+/* Định vị thu gọn để chùm hoa nằm gọn giữa màn hình di động */
+.flower.f1 { top: 15px;  left: calc(50% - 39px); animation-delay: .8s, 2.4s !important; }
+.flower.f2 { top: 48px;  left: calc(50% - 100px); animation-delay: .9s, 2.5s !important; }
+.flower.f3 { top: 48px;  left: calc(50% + 22px);  animation-delay: 1.0s, 2.6s !important; }
+.flower.f4 { top: 110px; left: calc(50% - 125px); animation-delay: 1.1s, 2.7s !important; }
+.flower.f5 { top: 110px; left: calc(50% + 48px);  animation-delay: 1.2s, 2.8s !important; }
+.flower.f6 { top: 120px; left: calc(50% - 39px); animation-delay: 1.3s, 2.9s !important; }
+.flower.f7 { top: 175px; left: calc(50% - 85px);  animation-delay: 1.4s, 3.0s !important; }
+.flower.f8 { top: 175px; left: calc(50% + 8px);   animation-delay: 1.5s, 3.1s !important; }
 
 @keyframes flowerAppear {
     from {
@@ -333,7 +336,7 @@ body {
 
 @keyframes flowerFloat {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
+    50% { transform: translateY(-5px); }
 }
 
 .petals {
@@ -344,14 +347,14 @@ body {
 
 .petal {
     position: absolute;
-    width: 34px;
-    height: 48px;
-    left: 28px;
-    top: 9px;
+    width: 29px;
+    height: 41px;
+    left: 24px;
+    top: 7px;
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
     background: linear-gradient(135deg, #ffb5c5, #e07a94);
-    box-shadow: 0 4px 15px rgba(191,98,122,0.18);
-    transform-origin: center 36px;
+    box-shadow: 0 4px 12px rgba(191,98,122,0.18);
+    transform-origin: center 32px;
 }
 
 .petal:nth-child(1) { transform: rotate(0deg); }
@@ -368,27 +371,29 @@ body {
 .flower-center {
     position: absolute;
     z-index: 5;
-    left: 36px;
-    top: 36px;
-    width: 18px;
-    height: 18px;
+    left: 31px;
+    top: 31px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     background: radial-gradient(circle at 35% 30%, #fff4bf, #dfad5d);
-    box-shadow: 0 0 12px rgba(224,173,93,0.8);
+    box-shadow: 0 0 10px rgba(224,173,93,0.8);
 }
 
 
 /* =========================================================
-   7. PHONG BÌ
+   7. PHONG BÌ (ĐÃ FIX LỖI TRÀN VIỀN HAI BÊN)
 ========================================================= */
 
 .envelope-area {
     position: relative;
 
-    margin-top: 15px;
+    margin-top: 10px;
+    width: 100%;
 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
     opacity: 0;
 
@@ -410,9 +415,8 @@ body {
 }
 
 .envelope-label {
-    position: absolute;
-
-    top: -30px;
+    position: relative;
+    margin-bottom: 10px;
 
     width: 100%;
 
@@ -422,7 +426,7 @@ body {
         "Cormorant Garamond",
         serif;
 
-    font-size: 20px;
+    font-size: 18px;
 
     color: #9b6472;
 }
@@ -430,8 +434,9 @@ body {
 .envelope {
     position: relative;
 
-    width: 300px;
-    height: 190px;
+    /* Thu nhỏ chiều rộng chuẩn xác (260px) để nằm gọn hoàn hảo trong iPhone 13, hết bị lòi góc */
+    width: 260px;
+    height: 165px;
 
     cursor: pointer;
 
@@ -439,7 +444,7 @@ body {
 
     filter:
         drop-shadow(
-            0 18px 25px
+            0 15px 22px
             rgba(135,76,92,.13)
         );
 }
@@ -475,14 +480,15 @@ body {
     width: 0;
     height: 0;
 
+    /* Tương ứng với nửa chiều rộng phong bì (130px) để tam giác gấp khít mép tuyệt đối */
     border-left:
-        150px solid transparent;
+        130px solid transparent;
 
     border-right:
-        150px solid transparent;
+        130px solid transparent;
 
     border-bottom:
-        105px solid rgba(223,169,181,.35);
+        92px solid rgba(223,169,181,.35);
 }
 
 .envelope-body::after {
@@ -497,13 +503,13 @@ body {
     height: 0;
 
     border-left:
-        150px solid transparent;
+        130px solid transparent;
 
     border-right:
-        150px solid transparent;
+        130px solid transparent;
 
     border-bottom:
-        105px solid rgba(255,255,255,.7);
+        92px solid rgba(255,255,255,.7);
 }
 
 .envelope-flap {
@@ -515,7 +521,7 @@ body {
     top: 0;
 
     width: 100%;
-    height: 110px;
+    height: 95px;
 
     transform-origin: top center;
 
@@ -548,12 +554,12 @@ body {
     z-index: 10;
 
     left: 50%;
-    top: 72px;
+    top: 62px;
 
     transform: translateX(-50%);
 
-    width: 48px;
-    height: 48px;
+    width: 42px;
+    height: 42px;
 
     border-radius: 50%;
 
@@ -563,7 +569,7 @@ body {
 
     color: white;
 
-    font-size: 18px;
+    font-size: 16px;
 
     background:
         radial-gradient(
@@ -573,7 +579,7 @@ body {
         );
 
     box-shadow:
-        0 5px 15px rgba(153,80,101,.25);
+        0 4px 12px rgba(153,80,101,.25);
 
     transition:
         opacity .5s ease,
@@ -590,7 +596,7 @@ body {
 
 
 /* =========================================================
-   8. LÁ THƯ (ĐÃ FIX TRÀN VIỀN & GỌN GÀNG TRÊN ĐIỆN THOẠI)
+   8. LÁ THƯ GỌN GÀNG TRÊN ĐIỆN THOẠI
 ========================================================= */
 
 .letter-modal {
@@ -604,8 +610,7 @@ body {
     align-items: center;
     justify-content: center;
 
-    /* Tăng khoảng đệm an toàn để lá thư không bao giờ chạm sát mép màn hình điện thoại */
-    padding: 24px;
+    padding: 20px;
 
     background:
         rgba(101,57,70,.18);
@@ -628,22 +633,16 @@ body {
 .letter {
     position: relative;
 
-    /* Đưa lá thư về giữa màn hình di động chuẩn xác, không bị lệch lề */
-    margin-left: 0;
-    margin-top: 0;
-
     width: 100%;
-    max-width: 340px;
+    max-width: 320px;
 
-    /* Giới hạn chiều cao an toàn, tránh tràn viền dưới của màn hình ĐTDĐ */
     max-height: 75vh;
 
     overflow-y: auto;
 
-    /* Thu nhỏ padding lại một chút cho cân đối không gian */
-    padding: 30px 22px 25px;
+    padding: 28px 20px 22px;
 
-    border-radius: 20px;
+    border-radius: 18px;
 
     background:
         linear-gradient(
@@ -675,7 +674,7 @@ body {
 .letter-decoration {
     position: absolute;
 
-    top: 14px;
+    top: 12px;
     left: 50%;
 
     transform: translateX(-50%);
@@ -683,7 +682,7 @@ body {
     color: #c68b99;
 
     letter-spacing: 8px;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .letter h2 {
@@ -693,13 +692,13 @@ body {
         "Cormorant Garamond",
         serif;
 
-    font-size: 28px;
+    font-size: 26px;
 
     font-weight: 600;
 
     color: #9c5368;
 
-    margin: 10px 0 16px;
+    margin: 8px 0 14px;
 }
 
 .letter-content {
@@ -707,10 +706,9 @@ body {
         "Cormorant Garamond",
         serif;
 
-    /* Chỉnh kích thước chữ vừa phải, sắc nét trên màn hình điện thoại */
-    font-size: 18px;
+    font-size: 17px;
 
-    line-height: 1.65;
+    line-height: 1.6;
 
     color: #674953;
 
@@ -718,7 +716,7 @@ body {
 }
 
 .letter-content p {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .letter-content .greeting {
@@ -744,11 +742,11 @@ body {
 .close-letter {
     position: absolute;
 
-    right: 12px;
-    top: 12px;
+    right: 10px;
+    top: 10px;
 
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
 
     border: none;
 
@@ -759,7 +757,7 @@ body {
 
     color: #a25c70;
 
-    font-size: 16px;
+    font-size: 15px;
 
     cursor: pointer;
 
@@ -804,44 +802,6 @@ body {
         opacity: 0;
     }
 }
-
-
-/* =========================================================
-   10. RESPONSIVE
-========================================================= */
-
-@media (max-width: 600px) {
-    #main {
-        padding: 45px 15px 80px;
-    }
-
-    .bouquet {
-        height: 320px;
-    }
-
-    .flower {
-        transform: scale(.72);
-    }
-
-    .flower.f1 { top: 15px; left: calc(50% - 35px); }
-    .flower.f2 { top: 50px; left: calc(50% - 95px); }
-    .flower.f3 { top: 50px; left: calc(50% + 15px); }
-    .flower.f4 { top: 110px; left: calc(50% - 115px); }
-    .flower.f5 { top: 110px; left: calc(50% + 45px); }
-    .flower.f6 { top: 120px; left: calc(50% - 35px); }
-    .flower.f7 { top: 170px; left: calc(50% - 80px); }
-    .flower.f8 { top: 170px; left: calc(50% + 0px); }
-
-    .envelope {
-        width: 280px;
-        height: 175px;
-    }
-
-    .intro-box {
-        padding: 45px 25px;
-    }
-}
-
 </style>
 </head>
 
@@ -867,7 +827,7 @@ body {
     <header class="title">
         <div class="small-title">A little celebration</div>
         <h1>Happy Birthday</h1>
-        <p>Gửi đến một người thật đặc biệt ✨</p>
+        <p>Gửi đến một người thật đặc biệt vào ngày 23/8 ✨</p>
     </header>
 
     <!-- CỤM 8 BÔNG HOA -->
@@ -954,7 +914,7 @@ async function startTypingEffect() {
     letterContentContainer.innerHTML = "";
     for (let i = 0; i < letterData.length; i++) {
         const item = letterData[i];
-        const p = document.createElement("p");
+    const p = document.createElement("p");
         if (item.className) p.className = item.className;
         p.classList.add("typing-cursor");
         letterContentContainer.appendChild(p);
